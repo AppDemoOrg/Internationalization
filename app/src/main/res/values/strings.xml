@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">InternationalizationDemo</string>
+    <string name="app_language">language</string>
+</resources>
