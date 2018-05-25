@@ -2,4 +2,5 @@
     <string name="app_name">InternationalizationDemo_US</string>
     <string name="app_language">language_US</string>
     <string name="hello_world">Hello World!_US</string>
+    <string name="change_language">Change Language!_US</string>
 </resources>
