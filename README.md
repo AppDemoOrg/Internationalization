@@ -1,1 +1,1 @@
-# InternationalizationDemo
+# Internationalization
