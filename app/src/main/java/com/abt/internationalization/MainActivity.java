@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.english) void english() {
         Locale locale = new Locale(ENGLISH);
         LanguageUtil.updateLocale(locale);
-        //restart();
+        restart();
         //LanguageUtil.changeSystemLanguage(Locale.ENGLISH);
     }
 
@@ -39,17 +39,16 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.chinese) void chinese() {
         Locale locale = new Locale(CHINESE);
         LanguageUtil.updateLocale(locale);
-        //restart();
+        restart();
         //LanguageUtil.changeSystemLanguage(Locale.CHINESE);
     }
 
-    /**重启MainActivity*/
     @RequiresApi(api = Build.VERSION_CODES.N)
     @OnClick(R.id.restart) void restart() {
         Intent intent = new Intent(this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
-        this.finish();
+        this.finish(); /**重启MainActivity*/
     }
 
     @Override
@@ -58,11 +57,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         initLocaleLanguage();
-        // getActionBar().setTitle(R.string.app_language);
     }
 
     private void initLocaleLanguage() {
-        // 例如,生成English，不限地区的Locale对象
         Locale.setDefault(Locale.ENGLISH);
         Locale newLocale = new Locale(Locale.getDefault().getLanguage(), Locale.getDefault().getCountry());
         LanguageUtil.updateLocale(newLocale);
