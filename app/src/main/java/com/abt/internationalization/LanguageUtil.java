@@ -6,7 +6,8 @@ import android.os.Build;
 import android.os.LocaleList;
 import android.support.annotation.RequiresApi;
 import android.util.DisplayMetrics;
-import android.util.Log;
+
+import com.orhanobut.logger.Logger;
 
 import java.lang.reflect.Method;
 import java.util.Locale;
@@ -33,7 +34,8 @@ public class LanguageUtil {
                 Method updateConfiguration = classIActivityManager.getDeclaredMethod("updatePersistentConfiguration", clzParams);
                 updateConfiguration.invoke(objIActivityManager, config);
             } catch (Exception e) {
-                Log.d("LanguageUtil", "changeSystemLanguage: " + e.getLocalizedMessage());
+                e.printStackTrace();
+                Logger.d("changeSystemLanguage: " + e.getLocalizedMessage());
             }
         }
     }

@@ -3,6 +3,9 @@ package com.abt.internationalization;
 import android.app.Application;
 import android.content.Context;
 
+import com.orhanobut.logger.AndroidLogAdapter;
+import com.orhanobut.logger.Logger;
+
 /**
  * @描述： @InterApplication
  * @作者： @黄卫旗
@@ -16,6 +19,7 @@ public class InterApplication extends Application {
     public void onCreate() {
         super.onCreate();
         mContext = getApplicationContext();
+        Logger.addLogAdapter(new AndroidLogAdapter());
     }
 
     public static Context getAppContext() {
